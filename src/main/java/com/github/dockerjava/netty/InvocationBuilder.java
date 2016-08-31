@@ -269,9 +269,6 @@ public class InvocationBuilder {
                         channel.writeAndFlush(Unpooled.copiedBuffer(buffer, 0, read));
                     }
 
-                    // we close the writing side of the socket, but keep the read side open to transfer stdout/stderr
-                    channel.shutdownOutput();
-
                 }
             }).start();
         }
